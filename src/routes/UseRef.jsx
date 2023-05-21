@@ -1,6 +1,7 @@
 import { memo, useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
+// memo will guarantee that if I provide this exact same props to this component, it won't re-render. that's why we are using ref here to make sure it is the same object (DOM element)
 const UseRefMemo = memo(function UseRef() {
   const renderTarget = useRef();
 
@@ -41,6 +42,7 @@ const UseRefMemo = memo(function UseRef() {
 
   return (
     <div className="use-ref page">
+      {/* this ref is going to be storing this div in renderTarget, which is  from useRef() hook */}
       <div ref={renderTarget} className="scene"></div>
     </div>
   );

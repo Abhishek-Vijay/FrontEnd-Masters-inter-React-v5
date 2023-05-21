@@ -1,6 +1,9 @@
 import { useId } from 'react';
 
 function LabelInputPair() {
+  // don't use useId() multiple times in a component.
+  // this works fine -
+  // const id2 = id + "-two";
   const id = useId();
   return (
     <div style={{ marginBottom: '50px' }}>

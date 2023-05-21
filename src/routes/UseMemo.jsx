@@ -4,6 +4,7 @@ import expensiveMathOperation from './expensiveMathOperation';
 export default function Home() {
   const [count, setCount] = useState(35);
   const [left, setLeft] = useState(0);
+  // useMemo() returns a function and behaves like useCallback()
   const value = useMemo(() => expensiveMathOperation(count), [count]);
 
   useEffect(() => {
